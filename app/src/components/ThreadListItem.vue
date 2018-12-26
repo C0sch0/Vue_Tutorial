@@ -29,22 +29,22 @@
 </template>
 
 <script>
-  import sourceData from '@/data'
-  export default {
-    props: {
-      thread: {
-        required: true,
-        type: Object
-      }
-    },
+import sourceData from '@/data'
+export default {
+  props: {
+    thread: {
+      required: true,
+      type: Object
+    }
+  },
 
-    computed: {
-      repliesCount () {
-        return Object.keys(this.thread.posts).length - 1
-      },
-      user () {
-        return sourceData.users[this.thread.userId]
-      }
+  computed: {
+    repliesCount () {
+      return Object.keys(this.thread.posts).length - 1
+    },
+    user () {
+      return sourceData.users[this.thread.userId]
     }
   }
+}
 </script>
