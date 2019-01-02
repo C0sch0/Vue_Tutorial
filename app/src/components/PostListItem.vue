@@ -32,7 +32,6 @@ export default {
       type: Object
     }
   },
-
   computed: {
     user () {
       return sourceData.users[this.post.userId]
