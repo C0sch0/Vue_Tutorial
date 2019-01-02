@@ -23,25 +23,25 @@
 </template>
 
 <script>
-  import sourceData from '@/data'
-  export default {
-    props: {
-      post: {
-        required: true,
-        type: Object
-      }
+import sourceData from '@/data'
+export default {
+  props: {
+    post: {
+      required: true,
+      type: Object
+    }
+  },
+
+  computed: {
+    user () {
+      return sourceData.users[this.post.userId]
     },
 
-    computed: {
-      user () {
-        return sourceData.users[this.post.userId]
-      },
-
-      userPostsCount () {
-        return Object.keys(this.user.posts).length
-      }
+    userPostsCount () {
+      return Object.keys(this.user.posts).length
     }
   }
+}
 </script>
 
 <style scoped>
